@@ -1,0 +1,98 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: linear-gradient(to right, #ffafbd, #ffc3a0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    color: #fff;
+}
+.heart {
+    position: absolute;
+    bottom: -100px;
+    animation: floatUp 5s linear infinite;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
+
+.paw {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-image: url('https://cdn.pixabay.com/photo/2015/12/09/15/14/footprint-1084869_1280.png'); /* Nueva imagen de huella de gato */
+    background-size: cover;
+    opacity: 1;
+    pointer-events: none;
+    animation: fadeOut 1s forwards;
+    transform-origin: center;
+  }
+  @keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
+.container {
+    max-width: 500px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 15px;
+    position: absolute;
+    transition: all 0.3s ease-in-out; /* Transición suave */
+}
+
+button {
+    background: #ff6f61;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+button:hover {
+    background: #ff4b47;
+}
+
+#surprise.hidden {
+    display: none;
+}
+
+#surprise {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+#dinosaur {
+    position: absolute;
+    bottom: 50px;
+    width: 140px;
+    height: 100px;
+    background-image: url('img/Idle (1).png'); /* Imagen estática inicial */
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.1s ease, left 0.1s ease;
+}
+.enemy {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    background-position: center;
+    bottom: 70px; /* Mismo nivel que el dinosaurio */
+    left: 100%; /* Comienza fuera de la pantalla a la derecha */
+}
