@@ -3,7 +3,9 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background: linear-gradient(to right, #ffafbd, #ffc3a0);
+    background-image: url('img/Terrenazo.png'); /* Asegúrate de que la ruta es correcta */
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    background-position: center; /* Centra la imagen */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,6 +13,7 @@ body {
     text-align: center;
     color: #fff;
 }
+
 .heart {
     position: absolute;
     bottom: -100px;
@@ -79,7 +82,7 @@ button:hover {
 
 #dinosaur {
     position: absolute;
-    bottom: 50px;
+    bottom: 0px;
     width: 140px;
     height: 100px;
     background-image: url('img/Idle (1).png'); /* Imagen estática inicial */
@@ -93,6 +96,6 @@ button:hover {
     height: 50px;
     background-size: cover;
     background-position: center;
-    bottom: 70px; /* Mismo nivel que el dinosaurio */
+    bottom: 50px; /* Mismo nivel que el dinosaurio */
     left: 100%; /* Comienza fuera de la pantalla a la derecha */
 }

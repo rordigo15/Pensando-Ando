@@ -1,3 +1,11 @@
+//SORPRESAAAAAAAA
+
+function showSurprise() {
+    const surprise = document.getElementById("surprise");
+    surprise.classList.toggle("hidden");
+  }
+
+
 // Crear corazones con animación
 function createHeart() {
     const heart = document.createElement("img");
@@ -5,7 +13,7 @@ function createHeart() {
     heart.src = "https://cdn.pixabay.com/photo/2012/04/18/15/46/heart-37384_1280.png"; // URL de la imagen
 
     // Tamaño aleatorio
-    const size = Math.random() * 60 + 80; // Tamaños entre 70px y 130px
+    const size = Math.random() * 50 + 70; // Tamaños entre 70px y 130px
     heart.style.width = `${size}px`;
     heart.style.height = `${size}px`;
 
@@ -32,7 +40,7 @@ function animateHearts() {
         createHeart();
     }
 
-    setTimeout(animateHearts, 100); // Crear un corazón cada 100ms
+    setTimeout(animateHearts, 150); // Crear un corazón cada 100ms
 }
 
 // Iniciar la animación de corazones
@@ -52,8 +60,8 @@ function moveContainer() {
     if (!isMoving) return;
 
     // Asegura que el contenedor no se mueva fuera de los límites de la pantalla
-    const randomX = Math.random() * 60 + 5; // 5% a 85% de la pantalla
-    const randomY = Math.random() * 60 + 5; // 5% a 85% de la pantalla
+    const randomX = Math.random() * 70 + 5; // 5% a 85% de la pantalla
+    const randomY = Math.random() * 70 + 5; // 5% a 85% de la pantalla
 
     container.style.left = `${randomX}vw`;
     container.style.top = `${randomY}vh`;
@@ -71,7 +79,7 @@ const button = document.querySelector("button");
 button.addEventListener("mouseenter", function() {
     if (!isMoving) {
         isMoving = true; // Inicia el movimiento
-        moveInterval = setInterval(moveContainer, 500); // Mueve el contenedor cada 500ms
+        moveInterval = setInterval(moveContainer, 1); // Mueve el contenedor cada 500ms
     }
 });
 
@@ -80,7 +88,7 @@ button.addEventListener("click", function() {
     clearInterval(moveInterval); // Limpiar el intervalo de movimiento
     isMoving = false; // Cambiar el flag a falso para evitar que se mueva nuevamente
     moveCount = 0; // Resetear el contador de movimientos
-    alert("¡Has detenido el movimiento!");
+    alert("¡MIRA EN EL CONTENEDOR :D!");
 });
 
 //GATOOOO XDDDDDDD
@@ -196,7 +204,7 @@ let lastPawTime = 0;
         let deadInterval;
         let facingLeft = false;
         let jumpHeight = 0; // Cuánto sube el dinosaurio
-        let jumpMaxHeight = 100; // Máxima altura del salto
+        let jumpMaxHeight = 200; // Máxima altura del salto
         let jumpSpeed = 10; // Velocidad del salto
         let isJumpingUp = true; // Flag para saber si está subiendo o cayendo
         let enemyPosition = window.innerWidth; // Inicializa el enemigo fuera de la pantalla a la derecha
@@ -320,7 +328,7 @@ let lastPawTime = 0;
                         jumpHeight -= jumpSpeed;
                     } else {
                         // El salto terminó, volver al suelo
-                        dinosaurVerticalPosition = 50;
+                        dinosaurVerticalPosition = 0;
                         isJumping = false;
                         clearInterval(jumpInterval);
                         startIdle();
@@ -359,7 +367,7 @@ let lastPawTime = 0;
             }, 200);
 
             dinosaur.style.left = `${dinosaurPosition}px`;
-            dinosaur.style.bottom = `${dinosaurVerticalPosition}px`;
+            //dinosaur.style.bottom = `${dinosaurVerticalPosition}px`;
         }
 
         function moveEnemy() {
@@ -375,3 +383,11 @@ let lastPawTime = 0;
         }
 
         setInterval(moveEnemy, 30); // Mueve el enemigo constantemente
+
+        var audio = document.getElementById('audio');
+
+        // Reproducir el audio al hacer clic en la página
+        document.addEventListener('click', function() {
+            audio.muted = false; // Quitar el mute
+            audio.play(); // Reproducir el audio
+        });
